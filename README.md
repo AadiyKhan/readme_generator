@@ -1,7 +1,7 @@
 ![Language](https://img.shields.io/badge/Language-Python-blue)
 ![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-orange)
 
-# Readme Generator ✨ Automated README Creation with AI
+# Readme Generator ✨ Automated README Creation
 
 Readme Generator is a powerful Python-based tool designed to automatically create comprehensive and engaging `README.md` files for your software projects. Leveraging Google's Generative AI, it intelligently scans your project structure, detects technologies, identifies dependencies, and synthesizes a professional README tailored to your codebase.
 
@@ -149,4 +149,5 @@ All Rights Reserved.
 
 ## Author
 
--   Your Name / Organization
+-   Aadiy Khan
+
