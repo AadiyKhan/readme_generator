@@ -39,7 +39,7 @@ Follow these steps to set up and run the Readme Generator locally:
 1.  **Clone the repository**:
 
     ```bash
-    git clone https://github.com/your-username/readme-generator.git
+    git clone https://github.com/AadiyKhan/readme-generator.git
     cd readme-generator
 
     ```
@@ -150,4 +150,5 @@ All Rights Reserved.
 ## Author
 
 -   Aadiy Khan
+
 
