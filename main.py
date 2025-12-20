@@ -145,7 +145,7 @@ def run_tool():
         if not target_path:
             target_path = '.'
         print()
-    
+
     # Check if folder actually exists
     if not os.path.exists(target_path):
         print("\n" + "="*60)
@@ -211,7 +211,11 @@ def run_tool():
     print("         'A REST API for task management'")
     user_context = input("\nContext (press Enter to skip): ").strip()
     project_info['user_goal'] = user_context if user_context else None
-    
+
+    # Add username
+    username = input("\nEnter your github username:\n")
+    project_info['username'] = username
+
     # Generate README
     print("\n" + "="*60)
     print("🧠 GENERATING README")
