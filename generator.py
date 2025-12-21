@@ -1,9 +1,6 @@
 def create_prompt(project_info):
     """Create a comprehensive prompt for AI to generate an awesome README"""
     
-   #  username
-    username = project_info.get("username")
-
     # Format file summaries
     file_summaries_text = ""
     for file_info in project_info['file_summaries'][:20]:  # Limit to 20 files
@@ -30,7 +27,6 @@ TASK: Generate a complete, production-ready README.md file based on the project 
 PROJECT INFORMATION:
 - Project Name: {project_info['name']}
 - Technology Stack: {tech_stack_text}
-- GitHub Username: {username or 'Not provided'}
 - Package Manager: {project_info['package_manager'] or 'Not detected'}
 - Entry Points: 
 {entry_points_text}
@@ -93,16 +89,10 @@ REQUIREMENTS FOR THE README:
    - Add a brief contributing section
 
 10. LICENSE:
-    - If a LICENSE file is detected, reference it
-    - If no LICENSE file is detected, state that no license information is provided
-    - Do NOT invent or assume a license
-
+    - Mention license if detected, otherwise say "See LICENSE file" or "All rights reserved"
 
 11. AUTHOR/CREDITS:
-    - If a GitHub username is provided, include an Author section
-      with a link to https://github.com/{username}
-    - Do NOT use placeholders if username is available
-
+    - Generic placeholder for author information
 
 CRITICAL FORMATTING REQUIREMENTS:
 - Use proper markdown syntax - headers must use #, ##, ### correctly
