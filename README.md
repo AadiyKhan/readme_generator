@@ -1,12 +1,33 @@
-![Language](https://img.shields.io/badge/Language-Python-blue)
-![License](https://img.shields.io/badge/License-All%20Rights%20Reserved-orange)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![PyPI](https://img.shields.io/badge/pypi-readme--gen-blue)
+![Version](https://img.shields.io/badge/version-1.0.0-blue)
 
-# Readme Generator ✨ Automated README Creation
+# Readme Generator ✨ Automated README Creation with AI
 
 Readme Generator is a powerful Python-based tool designed to automatically create comprehensive and engaging `README.md` files for your software projects. Leveraging Google's Generative AI, it intelligently scans your project structure, detects technologies, identifies dependencies, and synthesizes a professional README tailored to your codebase.
 
+## 🚀 Quick Start (New Users)
+
+**Just installed? Follow these 3 steps:**
+
+1. **Get your free API key** from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. **Set the API key** (choose one):
+   - **Windows:** `setx GEMINI_API_KEY "your_api_key_here"` (then restart terminal)
+   - **Linux/Mac:** `export GEMINI_API_KEY='your_api_key_here'` (add to `~/.bashrc` for permanent)
+3. **Generate README:**
+   ```bash
+   cd /path/to/your/project
+   castorscribe
+   ```
+
+That's it! Your `README.md` will be created in your project folder.
+
+> 📖 **New to the tool?** See [GETTING_STARTED.md](GETTING_STARTED.md) for a detailed first-time user guide.
+
 ## Table of Contents
 
+- [Quick Start (New Users)](#-quick-start-new-users)
 - [Features](#features)
 - [Technology Stack](#technology-stack)
 - [Installation](#installation)
@@ -34,93 +55,129 @@ This project is built using the following technologies:
 
 ## Installation
 
-Follow these steps to set up and run the Readme Generator locally:
+### Quick Install (Recommended)
+
+Install directly from PyPI:
+
+```bash
+pip install castorscribe
+```
+
+After installation, use it from anywhere:
+
+```bash
+# Generate README for current directory
+castorscribe
+
+# Generate README for specific folder
+castorscribe /path/to/your/project
+```
+
+### Alternative: Install from Source
+
+If you want to install from source:
 
 1.  **Clone the repository**:
 
     ```bash
-    git clone https://github.com/AadiyKhan/readme-generator.git
+    git clone https://github.com/your-username/readme-generator.git
     cd readme-generator
-
     ```
 
-2.  **Create a virtual environment**:
+2.  **Install the package**:
 
     ```bash
-    python -m venv venv
-
+    pip install -e .
     ```
 
-3.  **Activate the virtual environment**:
-
-    -   On macOS/Linux:
-
-        ```bash
-        source venv/bin/activate
-
-        ```
-
-    -   On Windows:
-
-        ```bash
-        .\venv\Scripts\activate
-
-        ```
-
-4.  **Install dependencies**:
+    Or install dependencies only:
 
     ```bash
     pip install -r requirements.txt
-
     ```
 
 ## Configuration
 
-This project requires an API key for Google's Generative AI to function.
+This project requires a Google Gemini API key to function.
 
-1.  **Obtain a Google API Key**:
-    Visit the [Google AI Studio](https://aistudio.google.com/app/apikey) to generate your API key.
+### Get Your API Key
 
-2.  **Set the API Key as an Environment Variable**:
-    The application expects the API key to be available in an environment variable named `GOOGLE_API_KEY`.
+1. Visit [Google AI Studio](https://makersuite.google.com/app/apikey) to generate your API key
+2. Copy your API key
 
-    -   On macOS/Linux:
+### Set the API Key
 
-        ```bash
-        export GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+The application looks for the API key in these environment variables (in order):
+- `GEMINI_API_KEY` (preferred)
+- `GOOGLE_API_KEY`
 
-        ```
+#### Windows (Permanent)
 
-    -   On Windows (Command Prompt):
+```cmd
+setx GEMINI_API_KEY "your_api_key_here"
+```
 
-        ```bash
-        set GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+Then restart your terminal.
 
-        ```
+#### Windows (Temporary - Current Session)
 
-    -   On Windows (PowerShell):
+**Command Prompt:**
+```cmd
+set GEMINI_API_KEY=your_api_key_here
+```
 
-        ```powershell
-        $env:GOOGLE_API_KEY="YOUR_API_KEY_HERE"
+**PowerShell:**
+```powershell
+$env:GEMINI_API_KEY="your_api_key_here"
+```
 
-        ```
+#### Linux/Mac (Permanent)
 
-    Replace `"YOUR_API_KEY_HERE"` with your actual API key. For persistent configuration, consider adding this line to your shell's profile file (e.g., `.bashrc`, `.zshrc`, `config.fish`, or system environment variables).
+Add to your shell profile (`~/.bashrc`, `~/.zshrc`, etc.):
+
+```bash
+export GEMINI_API_KEY='your_api_key_here'
+```
+
+Then reload:
+```bash
+source ~/.bashrc  # or ~/.zshrc
+```
+
+#### Linux/Mac (Temporary - Current Session)
+
+```bash
+export GEMINI_API_KEY='your_api_key_here'
+```
+
+**Note**: If the API key is not set, the tool will prompt you to enter it when you run it.
 
 ## Usage
 
-To generate a `README.md` for a project, navigate to the project's root directory and run the `main.py` script. By default, it will scan the current directory.
+### Basic Usage
 
-1.  **Ensure your virtual environment is active** (as per installation steps).
+After installation, you can use the `castorscribe` command from anywhere:
 
-2.  **Run the generator**:
+```bash
+# Generate README for current directory
+castorscribe
 
-    ```bash
-    python main.py
+# Generate README for a specific project folder
+castorscribe /path/to/your/project
 
-    ```
+# Alternative command name
+generate-readme /path/to/your/project
+```
 
-    The generated `README.md` file will be created in the directory where `main.py` is executed.
+### Running from Source
+
+If installed from source without the entry point:
+
+```bash
+python main.py /path/to/your/project
+```
+
+The generated `README.md` file will be created in the specified project directory.
 
 ## Project Structure
 
@@ -145,10 +202,8 @@ Contributions are welcome! If you have suggestions for improving the Readme Gene
 
 ## License
 
-All Rights Reserved.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Author
 
--   Aadiy Khan
-
-
+-   Your Name / Organization
